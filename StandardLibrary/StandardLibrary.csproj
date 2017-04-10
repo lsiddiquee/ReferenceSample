@@ -1,7 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFrameworks>netstandard1.5;net462</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Remove="NETStandard.Library" />
+  </ItemGroup>
 </Project>
